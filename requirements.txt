@@ -1,0 +1,4 @@
+langchain_community
+openai
+streamlit
+langchain
