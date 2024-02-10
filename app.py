@@ -3,9 +3,7 @@ from langchain_openai import OpenAI
 from langchain.prompts import PromptTemplate
 from langchain_community.llms import CTransformers
 import os
-import logging
 
-os.environ["OPENAI_API_KEY"] = "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"
 if "OPENAI_API_KEY" not in st.session_state:
     st.session_state["OPENAI_API_KEY"] = ''
 
@@ -49,12 +47,13 @@ def main():
         page_title = "Generate Emails",
         page_icon = "📨",
         layout = "centered",
-        initial_sidebar_state = "collapsed"
+        initial_sidebar_state = "expanded"
     )
 
     st.header("Generate Emails 📨")
 
     open_api_key = st.sidebar.text_input("Enter OpenAI API Key")
+    st.sidebar.write("⬆️ Enter your OpenAI API key ")
 
     os.environ["OPENAI_API_KEY"] = open_api_key
 
